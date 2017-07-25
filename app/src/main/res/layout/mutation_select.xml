@@ -5,6 +5,7 @@
         android:weightSum="1"
         android:layout_height="50dp"
         >
+
         <TextView
             android:id="@+id/msg"
             android:layout_span="1"
