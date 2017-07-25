@@ -28,6 +28,7 @@ public class mutation_select  extends AppCompatActivity {
 //        Districtcode = bundle.getString("Distcode");
 //        Tehsilcode = bundle.getString("Tehcode");
         String ss = new String();
+
         District="टोंक";
         Tehsil="ऊनियारा";
         Districtcode="12";
