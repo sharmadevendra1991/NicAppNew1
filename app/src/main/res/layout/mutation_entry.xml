@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="fill_parent">
+    android:layout_width="match_parent" android:layout_height="fill_parent">
+    <TableRow android:layout_marginTop="0dip"
+        android:weightSum="1"
+        >
+        <TextView
+            android:id="@+id/msg"
+            android:layout_span="1"
+            android:text="गाँव का नाम"
+            android:textColor="@color/black"
+            android:layout_weight="1"
+            android:layout_margin="8dp"
+            android:layout_height="50dp"
+            android:layout_width="60dp"/>
+        <Spinner
+            android:id="@+id/spinnerVillage"
+            android:layout_width="180dp"
+            android:layout_margin="8dp"
+            android:layout_height="50dp"
+            android:background="@drawable/rounded_edittext"
+            android:padding="8dp"
+            android:textSize="25sp"
+            />                   
+    </TableRow>
+    <TableRow android:layout_marginTop="10dip" >                                
+        <TextView
+            android:id="@+id/msg1"
+            android:layout_span="1"
+            android:text="नामांतरण नंबर"
+            android:textColor="@color/black"
+            android:layout_weight="1"
+            android:layout_margin="8dp"
+            android:layout_height="50dp"
+            android:layout_width="wrap_content"/>
+
+        <TextView
+            android:id="@+id/mutationno"
+            android:layout_span="1"
+            android:text=""
+            android:textColor="@color/black"
+            android:layout_weight="1"
+            android:layout_margin="8dp"
+            android:layout_height="50dp"
+            android:layout_width="wrap_content"/>
+               </TableRow>
+    <TableRow android:layout_marginTop="10dip" >                                
+
+        <TextView
+            android:id="@+id/msg2"
+            android:layout_span="1"
+            android:text="नामांतरण प्रकार"
+            android:textColor="@color/black"
+            android:layout_weight="1"
+            android:layout_margin="8dp"
+            android:layout_height="50dp"
+            android:layout_width="wrap_content"/>
+        <Spinner
+            android:id="@+id/mutationtype"
+            android:layout_width="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_height="50dp"
+            android:background="@drawable/rounded_edittext"
+            android:padding="8dp"
+            android:textSize="25sp"
+            />      
+               </TableRow>
+    <TableRow android:layout_marginTop="10dip" >                                
+        <TextView
+            android:id="@+id/msg3"
+            android:layout_span="1"
+            android:text="आवेदन दिनांक"
+            android:textColor="@color/black"
+            android:layout_weight="1"
+            android:layout_margin="8dp"
+            android:layout_height="50dp"
+            android:layout_width="wrap_content"/>
+        <TextView
+            android:id="@+id/date"
+            android:layout_span="1"
+            android:text=""
+            android:textColor="@color/black"
+            android:layout_weight="1"
+            android:layout_margin="8dp"
+            android:layout_height="50dp"
+            android:layout_width="wrap_content"/>
+               </TableRow>
+    <TableRow android:layout_marginTop="10dip" >                                
+        <Button
+            android:id="@+id/button"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="आगे चले"
+            android:textSize="18dp"
+            android:clickable="true"
+            android:onClick="GetKhata"
+            android:layout_margin="8dp"
+            android:padding="8dp"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/rounded_button"
+            />
+               </TableRow>
+</TableLayout>

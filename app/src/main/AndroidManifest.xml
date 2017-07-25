@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.govind.nicappnew">
+  
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/map"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <!-- Splash Screen -->
+        <activity android:name=".SplashScreen"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+          <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.Main" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+         <activity android:name=".loginselect"/>
+
+        <activity android:name=".getkhata"/>
+        <activity android:name=".getkhasara"/>
+        <activity android:name=".getOwnerInfo"/>
+        <activity android:name=".informationbykhata"/>
+        <activity android:name=".informationbykhasara"/>
+        <activity android:name=".informationbyownername"/>
+        <activity android:name=".loginnew"/>
+        <activity android:name=".login"/>
+        <activity android:name=".mutation_select"/>
+        <activity android:name=".mutationentry">
+        </activity>
+    </application>
+
+</manifest>

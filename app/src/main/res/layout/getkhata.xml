@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+
+        android:orientation="vertical"
+        android:paddingBottom="10dp"
+        android:paddingRight="0dp"
+        android:paddingTop="0dp" >
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/apanakhata_01"
+            android:layout_margin="-29dp"
+            />
+    </LinearLayout>
+    <MultiAutoCompleteTextView
+        android:id="@+id/simpleMultiAutoCompleteTextView"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="खाता चुने eg:- 10,22,9..... "
+        android:padding="8dp"
+        android:layout_margin="8dp"
+        android:textStyle="bold|italic"
+        android:background="@drawable/rounded_edittext"
+        android:layout_below="@+id/linearLayout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="12dp"/>
+    <Button
+        android:id="@+id/getkhata"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="सुचना प्राप्त करे "
+        android:textSize="18dp"
+        android:clickable="true"
+        android:onClick="GetKhata"
+        android:layout_margin="8dp"
+        android:padding="8dp"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/rounded_button"
+        />
+</LinearLayout>

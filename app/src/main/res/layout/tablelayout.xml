@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent" android:layout_height="fill_parent">
+    <TableRow android:layout_marginTop="0dip"
+        android:weightSum="1"
+       >
+        <TextView
+        android:id="@+id/msg"
+        android:layout_span="1"
+        android:layout_weight="1"
+        android:layout_marginLeft="5dp"
+        android:layout_height="50dp"/>                       
+    </TableRow>
+    <TableRow android:layout_marginTop="30dip" >                                
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/parentPanel"
+            android:layout_marginLeft="50dp"
+
+            android:layout_toLeftOf="@+id/imageButton1"
+            android:layout_weight="1"
+            android:src="@drawable/button_1" />
+
+        <ImageButton
+            android:id="@+id/imageButton1"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/textViewHeading"
+            android:layout_toRightOf="@+id/imageButton"
+            android:layout_marginRight="50dp"
+            android:layout_weight="1"
+            android:src="@drawable/button_2" />
+                            
+                              
+
+     </TableRow>
+    <TableRow android:layout_marginTop="15dip" >                                
+
+        <ImageButton
+            android:id="@+id/imageButton2"
+            android:layout_width="120dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="50dp"
+
+            android:layout_weight="1"
+            android:src="@drawable/button_3" />
+
+        <ImageButton
+            android:id="@+id/imageButton3"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="50dp"
+            android:layout_weight="1"
+            android:src="@drawable/button_new" />
+               </TableRow>
+</TableLayout>
