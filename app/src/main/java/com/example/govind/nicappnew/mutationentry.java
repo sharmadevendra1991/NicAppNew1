@@ -1,13 +1,20 @@
 package com.example.govind.nicappnew;
 import android.app.Activity;
+import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.CalendarView;
+import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -18,6 +25,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 /**
  * Created by nicsi on 18-07-2017.
@@ -37,6 +45,9 @@ public class mutationentry extends Activity {
     String maxmut=new String();
     String mutidsetlected=new String();
     Spinner mySpinner;
+    CalendarView simpleCalendarView;
+    EditText date;
+    DatePickerDialog datePickerDialog;
 
     public void onCreate(Bundle savedInstanceState)
     {
@@ -45,8 +56,6 @@ public class mutationentry extends Activity {
         Bundle bundle = getIntent().getExtras();
         Districtcode = bundle.getString("Distcode");
         Tehsilcode = bundle.getString("Tehcode");
-
-
             String GetTehsilbydistId = "http://10.130.19.227/WebApiDistrict/api/values/Getvillage?DistCode=";
             String Url = GetTehsilbydistId + Districtcode;
             String Url1 = Url + "&tehcode=";
@@ -62,8 +71,32 @@ public class mutationentry extends Activity {
             } catch (MalformedURLException e) {
                 e.printStackTrace();
             }
+        date = (EditText) findViewById(R.id.date);
+        // perform click event on edit text
+        date.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // calender class's instance and get current date , month and year from calender
+                final Calendar c = Calendar.getInstance();
+                int mYear = c.get(Calendar.YEAR); // current year
+                int mMonth = c.get(Calendar.MONTH); // current month
+                int mDay = c.get(Calendar.DAY_OF_MONTH); // current day
+                // date picker dialog
+                datePickerDialog = new DatePickerDialog(mutationentry.this,
+                        new DatePickerDialog.OnDateSetListener() {
 
+                            @Override
+                            public void onDateSet(DatePicker view, int year,
+                                                  int monthOfYear, int dayOfMonth) {
+                                // set day of month , month and year value in the edit text
+                                date.setText(dayOfMonth + "/"
+                                        + (monthOfYear + 1) + "/" + year);
 
+                            }
+                        }, mYear, mMonth, mDay);
+                datePickerDialog.show();
+            }
+        });
 
     }
     private class DownloadJSON2 extends AsyncTask<URL, Void, JSONArray> {
