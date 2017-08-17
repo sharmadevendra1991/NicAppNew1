@@ -27,7 +27,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import android.app.ProgressDialog;
 public class MainActivity extends Activity {
-    ProgressDialog mProgressDialog;
+
     ArrayList<String> Districtlist = new ArrayList<String>();
     ArrayList<String> DistrictId = new ArrayList<String>();
     ArrayList<String> TehsilId = new ArrayList<String>();
@@ -50,18 +50,22 @@ public class MainActivity extends Activity {
     Spinner Tehsilspinner;
     Spinner SpinnerVillage;
     private HttpURLConnection urlConnection;
-
+    ProgressDialog pd;
     private Context context;
-    ProgressDialog progressDialog;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         // Download JSON file AsyncTask
         try {
+            pd=new ProgressDialog(MainActivity.this);
+            pd.setMessage("Loading Data");
+            pd.setCancelable(false);
+            pd.show();
             new DownloadJSON().execute(new URL("http://10.130.19.227/WebApiDistrict/api/values/getdistrict"));
 
-            progressDialog = new ProgressDialog(MainActivity.this);
+          /*  progressDialog = new ProgressDialog(MainActivity.this);
             progressDialog.setMessage("Loading..."); // Setting Message
             progressDialog.setTitle("ProgressDialog"); // Setting Title
             progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER); // Progress Dialog Style Spinner
@@ -76,7 +80,7 @@ public class MainActivity extends Activity {
                     }
                     progressDialog.dismiss();
                 }
-            }).start();
+            }).start();*/
 
         } catch (MalformedURLException e) {
             e.printStackTrace();
@@ -131,6 +135,7 @@ public class MainActivity extends Activity {
                     e.printStackTrace();
                 }
             }
+            pd.dismiss();
             Districtlist.add(0, "जिला चुने                                                           ▼");
             DistrictId.add(0,"0");
             // Spinner adapter
