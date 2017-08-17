@@ -49,7 +49,7 @@
 
            />-->
     </LinearLayout>
-       <ProgressBar
+       <!--<ProgressBar
            android:id="@+id/simpleProgressBar"
            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
            android:layout_width="fill_parent"
@@ -57,7 +57,7 @@
            android:layout_centerHorizontal="true"
            android:max="100"
            android:progress="0"
-           android:progressDrawable="@drawable/custom_progress" />
+           android:progressDrawable="@drawable/custom_progress" />-->
     <Spinner
         android:id="@+id/spinnerDistrict"
         android:layout_width="match_parent"
