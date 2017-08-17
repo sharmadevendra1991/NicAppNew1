@@ -1,6 +1,7 @@
 package com.example.govind.nicappnew;
 import android.app.Activity;
 import android.app.DatePickerDialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.AsyncTask;
@@ -48,7 +49,7 @@ public class mutationentry extends Activity {
     CalendarView simpleCalendarView;
     EditText date;
     DatePickerDialog datePickerDialog;
-
+ProgressDialog pd;
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
@@ -56,6 +57,10 @@ public class mutationentry extends Activity {
         Bundle bundle = getIntent().getExtras();
         Districtcode = bundle.getString("Distcode");
         Tehsilcode = bundle.getString("Tehcode");
+        pd=new ProgressDialog(mutationentry.this);
+        pd.setMessage("Loading Data");
+        pd.setCancelable(false);
+        pd.show();
             String GetTehsilbydistId = "http://10.130.19.227/WebApiDistrict/api/values/Getvillage?DistCode=";
             String Url = GetTehsilbydistId + Districtcode;
             String Url1 = Url + "&tehcode=";
@@ -91,7 +96,6 @@ public class mutationentry extends Activity {
                                 // set day of month , month and year value in the edit text
                                 date.setText(dayOfMonth + "/"
                                         + (monthOfYear + 1) + "/" + year);
-
                             }
                         }, mYear, mMonth, mDay);
                 datePickerDialog.show();
@@ -139,17 +143,14 @@ public class mutationentry extends Activity {
                     String village = c.getString("Village_name");
                     villageIdList.add(villageid);
                     villagelist.add(village);
-
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
             }
+            pd.dismiss();
             villagelist.add(0, "गाँव चुने                                                             ▼");
             villageIdList.add(0, "0");
-
             // Spinner adapter
-
-
             SpinnerVillage.setAdapter(new ArrayAdapter<String>(mutationentry.this,
                     android.R.layout.simple_spinner_dropdown_item,
                     villagelist));
@@ -161,7 +162,6 @@ public class mutationentry extends Activity {
                 }
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
-
             });
         }
         String dd = new String();
@@ -198,7 +198,7 @@ public class mutationentry extends Activity {
             // Locate the spinner in activity_main.xml
 
             mySpinner = (Spinner) findViewById(R.id.mutationtype);
-            mySpinner.setPrompt("जिला चुने ");
+
             for (int i = 0; i < jsonArray.length(); i++) {
 
                 JSONObject c = null;
@@ -221,11 +221,9 @@ public class mutationentry extends Activity {
                 @Override
                 public void onItemSelected(AdapterView<?> parent, View view,
                                            int position, long Id) {
-//                    TehsilId.clear();
-//                    Tehsillist.clear();
-                    String Name = muttype.get(position);
+                   // String Name = muttype.get(position);
                     mutidsetlected = mutid.get(position);
-                    int pos =mySpinner.getSelectedItemPosition();
+                   // int pos =mySpinner.getSelectedItemPosition();
 
                 }
 
@@ -275,8 +273,22 @@ public class mutationentry extends Activity {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-
             mutno.setText(maxmut);
         }
+    }
+
+    public void Getmutdata(View view)
+    {
+        Intent i = new Intent(mutationentry.this, bechan.class);
+//Create the bundle
+        Bundle bundle = new Bundle();
+//Add your data to bundle
+        bundle.putString("Date",date.getText().toString());
+        bundle.putString("Villlink", villlink);
+        bundle.putString("MutationId", mutidsetlected);
+        bundle.putString("Maxmutation", maxmut);
+//Add the bundle to the intent
+        i.putExtras(bundle);
+        startActivity(i);
     }
 }
