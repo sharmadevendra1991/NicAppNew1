@@ -21,7 +21,7 @@ public class mutation_select  extends AppCompatActivity {
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mutation_select);
-      //  getSupportActionBar().hide();
+       getSupportActionBar().hide();
 //       Bundle bundle = getIntent().getExtras();
 //        District = bundle.getString("DistName");
 //        Tehsil = bundle.getString("TehName");
