@@ -39,8 +39,8 @@
         <activity android:name=".login"/>
         <activity android:name=".mutation_select"/>
         <activity android:name=".mutationentry"/>
-            <activity android:name=".bechan">
-        </activity>
+            <activity android:name=".bechan"/>
+        <activity android:name=".testnew"/>
     </application>
 
 </manifest>
