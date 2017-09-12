@@ -49,6 +49,11 @@ public class login extends AppCompatActivity {
         Intent i = new Intent(login.this, mutation_select.class);
         startActivity(i);
     }
+/*   public void loginDirect(View view)
+   {
+       Intent i = new Intent(login.this, testnew.class);
+       startActivity(i);
+   }*/
     public void login(View view) {
         final EditText ed1,ed2;
         ed1 = (EditText)findViewById(R.id.editText);
