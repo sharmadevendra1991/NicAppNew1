@@ -12,6 +12,43 @@ public class Item {
     private String CastName;
     private String NiwasiName;
     private String LandTypeName;
+    private String OldHissa;
+    private String OldHissa_area;
+    private String newHissa;
+    private String Nabalig;
+
+    public String getNabalig() {
+        return Nabalig;
+    }
+
+    public void setNabalig(String nabalig) {
+        Nabalig = nabalig;
+    }
+
+    public String getOldHissa() {
+        return OldHissa;
+    }
+
+    public void setOldHissa(String oldHissa) {
+        OldHissa = oldHissa;
+    }
+
+    public String getOldHissa_area() {
+        return OldHissa_area;
+    }
+
+    public void setOldHissa_area(String oldHissa_area) {
+        OldHissa_area = oldHissa_area;
+    }
+
+    public String getNewHissa() {
+        return newHissa;
+    }
+
+    public void setNewHissa(String newHissa) {
+        this.newHissa = newHissa;
+    }
+
 
     public String getOwnerNameText() {
         return OwnerNameText;
@@ -67,16 +104,19 @@ public class Item {
 
     /*  private String old_Hissa;
         private String new_Hissa;*/
-    public Item(String OwnerNameText,String RelationName, String ParentsName, String CategoryName, String CastName, String NiwasiName, String LandTypeName)
+    public Item(String OwnerNameText,String RelationName, String ParentsName,String Nabalig, String CategoryName, String CastName, String NiwasiName, String LandTypeName,String OldHissa,String OldHissa_area,String newHissa)
     {
         this.OwnerNameText=OwnerNameText;
         this.RelationName=RelationName;
         this.ParentsName=ParentsName;
+        this.Nabalig=Nabalig;
         this.CategoryName=CategoryName;
         this.CastName=CastName;
         this.NiwasiName=NiwasiName;
         this.LandTypeName=LandTypeName;
-
+        this.OldHissa=OldHissa;
+        this.OldHissa_area=OldHissa_area;
+        this.newHissa=newHissa;
         Ischecked=false;
     }
 

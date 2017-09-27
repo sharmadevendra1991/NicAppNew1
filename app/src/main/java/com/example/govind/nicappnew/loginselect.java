@@ -1,6 +1,8 @@
 package com.example.govind.nicappnew;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -17,7 +19,7 @@ public class loginselect extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_select);
 
-        // Download JSON file AsyncTask
+
         b1 = (Button) findViewById(R.id.button_login);
         b2 = (Button) findViewById(R.id.button_ror);
         b1.setOnClickListener(new View.OnClickListener() {
@@ -36,6 +38,21 @@ public class loginselect extends Activity {
 
             }
         });
+
+                /*public void onBackPressed()
+        {
+            new AlertDialog.Builder(this)
+                    .setMessage("Are you sure you want to exit?")
+                    .setCancelable(false)
+                    .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            loginselect.this.finish();
+                        }
+                    })
+                    .setNegativeButton("No", null)
+                    .show();
+        }*/
+
     }
 
 }

@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.govind.nicappnew">
-  
-    <uses-permission android:name="android.permission.INTERNET" />
+     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <application
         android:allowBackup="true"
@@ -19,7 +18,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-          <activity
+        <activity
             android:name=".MainActivity"
             android:label="@string/app_name">
             <intent-filter>
@@ -28,7 +27,6 @@
             </intent-filter>
         </activity>
          <activity android:name=".loginselect"/>
-
         <activity android:name=".getkhata"/>
         <activity android:name=".getkhasara"/>
         <activity android:name=".getOwnerInfo"/>
@@ -39,8 +37,10 @@
         <activity android:name=".login"/>
         <activity android:name=".mutation_select"/>
         <activity android:name=".mutationentry"/>
-            <activity android:name=".bechan"/>
+        <activity android:name=".bechan"
+            android:exported="true"/>
         <activity android:name=".testnew"/>
+        <activity android:name=".bechanadd"></activity>
     </application>
 
 </manifest>

@@ -3,67 +3,103 @@
    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal">
-<LinearLayout
+<TableLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-
     android:orientation="vertical"
     android:layout_weight="9">
+    <TableRow
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent" >
+        <TextView
+            android:id="@+id/ownername"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="devendra"/>
+        <TextView
+            android:id="@+id/nabalig"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_weight="1"/>
+    </TableRow>
+    <TableRow
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent" >
+
+        <TextView
+            android:id="@+id/relation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="devendra"/>
+        <TextView
+            android:id="@+id/relative"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="devendra"/>
+    </TableRow>
+    <TableRow
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent" >
+        <TextView
+            android:id="@+id/cast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="devendra"/>
+        <TextView
+            android:id="@+id/category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="devendra"/>
+    </TableRow>
+    <TableRow
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent" >
+        <TextView
+            android:id="@+id/niwasi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="devendra"/>
+        <TextView
+            android:id="@+id/type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="devendra"/>
+    </TableRow>
+    <TableRow
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent" >
     <TextView
-        android:id="@+id/ownername"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"/>
-    <!-- <TextView
-        android:id="@+id/nabalig"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"/>-->
-    <TextView
-        android:id="@+id/relation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"/>
-    <TextView
-        android:id="@+id/relative"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"/>
-    <TextView
-        android:id="@+id/cast"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"/>
-    <TextView
-        android:id="@+id/category"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"/>
-    <TextView
-        android:id="@+id/niwasi"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"/>
-    <TextView
-        android:id="@+id/type"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"/>
-    <!--<TextView
         android:id="@+id/oldhissa"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"/>
+        android:layout_weight="1"
+        android:text="devendra"/>
+    <TextView
+        android:id="@+id/oldhissa_area"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="devendra"/>
     <TextView
         android:id="@+id/newhissa"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"/>-->
-</LinearLayout>
+        android:layout_weight="1"
+        android:text="devendra"/>
+    </TableRow>
+</TableLayout>
     <CheckBox
         android:id="@+id/chk_action"
         android:layout_width="wrap_content"
-        android:layout_height="164dp"
+        android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         />
 </LinearLayout>

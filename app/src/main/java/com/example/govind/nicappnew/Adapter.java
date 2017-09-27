@@ -23,6 +23,7 @@ public class Adapter extends ArrayAdapter<Item> {
 private Activity context;
     private int id;
     ArrayList<Item>array;
+    static int counter=0;
     public Adapter(Activity context,int resource,ArrayList<Item> objects) {
         super(context, resource, objects);
         this.context=context;
@@ -32,15 +33,18 @@ private Activity context;
 
     @NonNull
     @Override
-    public View getView(int position,View convertView,ViewGroup parent) {
-        if(convertView==null) {
-            LayoutInflater inflater = context.getLayoutInflater();
-           // convertView = inflater.inflate(id, null);
-            convertView=inflater.inflate(id, parent, false);
-        }
+    public View getView(int position ,View convertView,ViewGroup parent) {
+
+            if (convertView == null) {
+                counter++;
+                LayoutInflater inflater = context.getLayoutInflater();
+                // convertView = inflater.inflate(id, null);
+                convertView = inflater.inflate(id, parent, false);
+            }
+        try {
             final Item item = array.get(position);
             TextView OwnerNameText = (TextView) convertView.findViewById(R.id.ownername);
-     /*   TextView Nabalig=(TextView)convertView.findViewById(R.id.nabalig);*/
+            TextView Nabalig=(TextView)convertView.findViewById(R.id.nabalig);
             TextView RelationName = (TextView) convertView.findViewById(R.id.relation);
             TextView ParentsName = (TextView) convertView.findViewById(R.id.relative);
             TextView CategoryName = (TextView) convertView.findViewById(R.id.category);
@@ -48,29 +52,36 @@ private Activity context;
             TextView NiwasiName = (TextView) convertView.findViewById(R.id.niwasi);
             TextView LandTypeName = (TextView) convertView.findViewById(R.id.type);
             CheckBox checkBox = (CheckBox) convertView.findViewById(R.id.chk_action);
-       /* TextView txtOldHissa=(TextView)convertView.findViewById(R.id.oldhissa);
-       TextView txtNewHissa=(TextView)convertView.findViewById(R.id.newhissa);
-       TextView txt_Hissa=(TextView)convertView.findViewById(R.id.txt_Hissa);*/
-        checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                item.setIschecked(isChecked);
-            }
-        });
-        OwnerNameText.setText(item.getOwnerNameText());
-        RelationName.setText(item.getRelationName());
-        ParentsName.setText(item.getParentsName());
-        CastName.setText(item.getCategoryName());
-        CategoryName.setText(item.getCastName());
+        TextView OldHissa=(TextView)convertView.findViewById(R.id.oldhissa);
+       TextView OldHissa_area=(TextView)convertView.findViewById(R.id.oldhissa_area);
+       TextView newHissa=(TextView)convertView.findViewById(R.id.newhissa);
+            checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                    item.setIschecked(isChecked);
+                }
+            });
+            OwnerNameText.setText(item.getOwnerNameText());
+            RelationName.setText(item.getRelationName());
+            ParentsName.setText(item.getParentsName());
+            Nabalig.setText(item.getNabalig());
+            CastName.setText(item.getCategoryName());
+            CategoryName.setText(item.getCastName());
 
-        NiwasiName.setText(item.getNiwasiName());
-        LandTypeName.setText(item.getLandTypeName());
+            NiwasiName.setText(item.getNiwasiName());
+            LandTypeName.setText(item.getLandTypeName());
+            OldHissa.setText(item.getOldHissa());
+            OldHissa_area.setText(item.getOldHissa_area());
+            newHissa.setText(item.getNewHissa());
 
-       checkBox.setChecked(item.ischecked());
+            checkBox.setChecked(item.ischecked());
 
-            //Item item=array.get(position);
-           // return super.getView(position, convertView, parent);
 
-        return convertView;
+            return convertView;
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
 
     }
 }

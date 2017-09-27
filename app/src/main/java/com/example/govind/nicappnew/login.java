@@ -49,7 +49,7 @@ public class login extends AppCompatActivity {
         Intent i = new Intent(login.this, mutation_select.class);
         startActivity(i);
     }
-/*   public void loginDirect(View view)
+ /*  public void loginDirect(View view)
    {
        Intent i = new Intent(login.this, testnew.class);
        startActivity(i);
